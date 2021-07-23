@@ -1,6 +1,10 @@
 from scrapy.exporters import JsonLinesItemExporter
 from confluent_kafka import Producer
-"""This pipeline pings kafka with the path of the newly created file after the jsonlines exporters is done """
+"""This pipeline pings kafka with the path of the newly created file after the jsonlines exporters is done 
+Usage: First, add to pipelines.py in Scrapy project. Then, enable the pipeline in settings.py. Now you can 
+listen to the Kafka feed to process scrapy file outputs.
+
+"""
 
 class KafkaPipeline:
     """Ping kafka with filename after export"""
